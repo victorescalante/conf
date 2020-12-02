@@ -1,0 +1,15 @@
+# Update instance
+sudo apt update
+# installs dependences and docker
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+# test hello world
+sudo docker run hello-world
+# Install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+# Add permissions
+sudo chmod +x /usr/local/bin/docker-compose
+# Create symbolic link
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+# test installations
+docker-compose --version
+docker ps

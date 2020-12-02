@@ -5,3 +5,7 @@ docker run --rm --name pg-docker -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 -
 # Active mysql
 docker rm -f mysql-db
 docker run --rm --name mysql-db -e MYSQL_ROOT_PASSWORD=secret -d -p 33060:3306  -v $HOME/docker/volumes/mysql:/var/lib/mysql mysql
+
+#Active mongoDB
+docker rm -f mongo-db
+docker run --rm --name mongo-db -e MONGO_INITDB_ROOT_USERNAME=victor -e MONGO_INITDB_ROOT_PASSWORD=password -v $HOME/docker/volumes/mongo:/data/db  -p 27017:27017  -d mongo
